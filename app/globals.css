@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: 26 16 48; --paper: 255 255 255; --lavender: 246 241 255;
+  --primary: 124 58 237; --violet: 168 85 247; --deep-purple: 26 16 48;
+  --line: 226 216 244; --muted: 103 91 127;
+}
+.dark {
+  --ink: 244 240 250; --paper: 15 11 24; --lavender: 29 21 47;
+  --line: 62 47 88; --muted: 177 166 198;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: rgb(var(--paper)); color: rgb(var(--ink)); }
+::selection { background: rgb(var(--primary) / .2); color: rgb(var(--ink)); }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible { outline: 2px solid rgb(var(--violet)); outline-offset: 3px; }
+.site-grid { position: relative; }
+.site-grid::before { position: absolute; inset: 0; z-index: 0; pointer-events: none; content: ""; background-image: radial-gradient(rgb(var(--primary) / .13) 1px, transparent 1px); background-size: 24px 24px; mask-image: linear-gradient(to bottom, black 0%, transparent 92%); }
+.site-grid > * { position: relative; z-index: 1; }
+.spotlight { background: radial-gradient(420px circle at var(--spot-x, 50%) var(--spot-y, 20%), rgb(var(--violet) / .12), transparent 68%); }
+.aurora { filter: blur(70px); opacity: .18; animation: drift 16s ease-in-out infinite alternate; }
+.aurora-two { animation-delay: -7s; animation-duration: 20s; }
+@keyframes drift { from { transform: translate3d(-4%, -2%, 0) scale(1); } to { transform: translate3d(6%, 5%, 0) scale(1.12); } }
+@keyframes blink { 50% { opacity: 0; } }
+.cursor-blink { animation: blink 1s step-end infinite; }
+.marquee-track { animation: marquee 28s linear infinite; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .aurora, .marquee-track, .cursor-blink { animation: none; } }
+@media (max-width: 640px) { .site-grid { background-size: 20px 20px; } }
+.dark .bg-white { background-color: rgb(24 18 38); }
+.dark .bg-paper\/85 { background-color: rgb(15 11 24 / .85); }
+.dark .text-ink { color: rgb(var(--ink)); }
+.dark .text-muted { color: rgb(var(--muted)); }

@@ -1,0 +1,2 @@
+import { site } from "@/data/site";
+export default function Footer() { return <footer className="border-t border-line px-5 py-8"><div className="mx-auto flex max-w-6xl flex-col gap-3 text-xs text-muted sm:flex-row sm:items-center sm:justify-between"><p>© 2026 {site.name}. Built with Next.js, Tailwind & too much coffee.</p><p className="font-mono text-[10px]">status: <span className="text-primary">online</span></p></div></footer>; }

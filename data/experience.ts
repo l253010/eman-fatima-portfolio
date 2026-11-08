@@ -1,0 +1,5 @@
+export interface Experience { role: string; company: string; location: string; dates: string; bullets: string[] }
+export const experience: Experience[] = [
+  { role: "Artificial Intelligence Engineer (Cohort Member)", company: "Afrium", location: "Remote", dates: "Aug 2026 to Oct 2026", bullets: ["Selected for the competitive Afrium Summer of Code program with industry mentorship.", "Learned custom AI agent architectures and implemented Model Context Protocol (MCP) servers that let LLM applications exchange data with external tools.", "Benchmarked agentic workflows for reliability, execution speed and contextual accuracy."] },
+  { role: "Front-End Developer Intern", company: "QuantumLogics", location: "Remote", dates: "Jul 2026 to Sep 2026", bullets: ["Built front-end features for Digital Logics Studio, a digital logic design learning platform, using React.", "Implemented the interactive trainer board logic, including connecting components through pins.", "Collaborated with senior engineers through code reviews, cross-browser debugging and agile sprints."] }
+];
